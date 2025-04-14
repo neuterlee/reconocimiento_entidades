@@ -12,6 +12,30 @@ El proyecto está organizado en los siguientes directorios:
 -   **`3_prueba_modelo/`**: Proporciona scripts para probar y validar el rendimiento del modelo NER entrenado. Esto incluye la generación de visualizaciones del reconocimiento de entidades y la realización de tareas básicas de anonimización.
 -   **`4_anonimizacion/`**: Presenta scripts dedicados a implementar la anonimización de texto utilizando la biblioteca Presidio, a menudo en conjunto con modelos NER entrenados a medida y patrones Regex complementarios.
 
+reconocimiento/
+  0_dividir_db/
+    output/                      # <- Subfolders created here (e.g., output_YYYY-MM-DD_HH-MM-SS) containing split .txt files, assignment_log.csv, verification_log.txt
+    dividir_basedatos.ipynb      # Splits input CSV (path hardcoded inside) into smaller parts for annotation.
+  1_procesamiento_anotaciones/
+    input_annotations/           # <- Place input JSON annotation files here.
+    logs/                        # <- Logs for validation, whitespace checks, merging, purging, visualization are saved here.
+    procesamiento_anotaciones.ipynb # Validates, cleans, merges, optionally purges entities, and visualizes annotations.
+    # Output files (merged/purged JSONs, HTML visualizer) are often created relative to this script's location or in the project root.
+  2_entrenamiento_NER/
+    annotations_dataset/         # <- Output folder for generated train.spacy and valid.spacy files.
+    logs/                        # <- Logs for the data conversion process (JSON to .spacy).
+    output/                      # <- Output folder where trained models (model-best, model-last) are saved.
+    entrenamiento_NER.ipynb      # Converts processed JSON annotations to spaCy format and initiates model training.
+    config.cfg                   # Configuration file defining the spaCy model, pipeline, and training parameters.
+  3_prueba_modelo/
+    model-best/                  # <- Place the trained spaCy model (output from step 2) here.
+    # Output files like ner_results.html/json, anonimized_output.csv/html are saved directly in this folder.
+    validacion_modelo_NER.ipynb  # Loads the trained model to test NER performance, visualize results, and perform basic anonymization tests. Input CSV paths hardcoded.
+  4_anonimizacion/
+    # Output files like reporte_anonimizacion.txt/html, presidio_annotations_output.json are saved directly in this folder.
+    implementacion_presidio.ipynb # Implements anonymization using Presidio, combining custom NER model and Regex. Input CSV and model paths hardcoded.
+  README.md                      # This documentation file (you are here).
+
 ## Descripción General del Flujo de Trabajo
 
 El proyecto sigue un flujo de trabajo general:
