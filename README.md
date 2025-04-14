@@ -16,27 +16,27 @@ El proyecto está organizado en los siguientes directorios:
 ```text
 reconocimiento/
   0_dividir_db/
-    output/                      # <- Subfolders created here (e.g., output_YYYY-MM-DD_HH-MM-SS) containing split .txt files, assignment_log.csv, verification_log.txt
-    dividir_basedatos.ipynb      # Splits input CSV (path hardcoded inside) into smaller parts for annotation.
+    output/                      # <- Carpeta de salida para archivos divididos (subcarpetas con fecha/hora creadas aquí) conteniendo archivos .txt divididos, assignment_log.csv, verification_log.txt
+    dividir_basedatos.ipynb      # Divide el CSV de entrada (ruta codificada internamente) en partes más pequeñas para anotar.
   1_procesamiento_anotaciones/
-    input_annotations/           # <- Place input JSON annotation files here.
-    logs/                        # <- Logs for validation, whitespace checks, merging, purging, visualization are saved here.
-    procesamiento_anotaciones.ipynb # Validates, cleans, merges, optionally purges entities, and visualizes annotations.
-    # Output files (merged/purged JSONs, HTML visualizer) are often created relative to this script's location or in the project root.
+    input_annotations/           # <- Coloca aquí los archivos JSON de anotaciones de entrada.
+    logs/                        # <- Logs para validación, revisión de espacios, fusión, purga y visualización se guardan aquí.
+    procesamiento_anotaciones.ipynb # Valida, limpia, fusiona, opcionalmente purga entidades y visualiza anotaciones.
+    # Archivos de salida (JSON fusionado/purgado, visualizador HTML) se crean a menudo relativos a la ubicación de este script o en la raíz del proyecto.
   2_entrenamiento_NER/
-    annotations_dataset/         # <- Output folder for generated train.spacy and valid.spacy files.
-    logs/                        # <- Logs for the data conversion process (JSON to .spacy).
-    output/                      # <- Output folder where trained models (model-best, model-last) are saved.
-    entrenamiento_NER.ipynb      # Converts processed JSON annotations to spaCy format and initiates model training.
-    config.cfg                   # Configuration file defining the spaCy model, pipeline, and training parameters.
+    annotations_dataset/         # <- Carpeta de salida para archivos train.spacy y valid.spacy generados.
+    logs/                        # <- Logs para el proceso de conversión de datos (JSON a .spacy).
+    output/                      # <- Carpeta de salida donde se guardan los modelos entrenados (model-best, model-last).
+    entrenamiento_NER.ipynb      # Convierte las anotaciones JSON procesadas al formato spaCy e inicia el entrenamiento del modelo.
+    config.cfg                   # Archivo de configuración que define el modelo spaCy, el pipeline y los parámetros de entrenamiento.
   3_prueba_modelo/
-    model-best/                  # <- Place the trained spaCy model (output from step 2) here.
-    # Output files like ner_results.html/json, anonimized_output.csv/html are saved directly in this folder.
-    validacion_modelo_NER.ipynb  # Loads the trained model to test NER performance, visualize results, and perform basic anonymization tests. Input CSV paths hardcoded.
+    model-best/                  # <- Coloca aquí el modelo spaCy entrenado (salida del paso 2).
+    # Archivos de salida como ner_results.html/json, anonimized_output.csv/html se guardan directamente en esta carpeta.
+    validacion_modelo_NER.ipynb  # Carga el modelo entrenado para probar el rendimiento NER, visualizar resultados y realizar pruebas básicas de anonimización. Rutas de CSV de entrada codificadas.
   4_anonimizacion/
-    # Output files like reporte_anonimizacion.txt/html, presidio_annotations_output.json are saved directly in this folder.
-    implementacion_presidio.ipynb # Implements anonymization using Presidio, combining custom NER model and Regex. Input CSV and model paths hardcoded.
-  README.md                      # This documentation file (you are here).
+    # Archivos de salida como reporte_anonimizacion.txt/html, presidio_annotations_output.json se guardan directamente en esta carpeta.
+    implementacion_presidio.ipynb # Implementa la anonimización usando Presidio, combinando modelo NER personalizado y Regex. Rutas de CSV de entrada y modelo codificadas.
+  README.md                      # Este archivo de documentación (estás aquí).
   ```
 
 
