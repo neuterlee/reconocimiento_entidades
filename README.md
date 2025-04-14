@@ -12,6 +12,8 @@ El proyecto está organizado en los siguientes directorios:
 -   **`3_prueba_modelo/`**: Proporciona scripts para probar y validar el rendimiento del modelo NER entrenado. Esto incluye la generación de visualizaciones del reconocimiento de entidades y la realización de tareas básicas de anonimización.
 -   **`4_anonimizacion/`**: Presenta scripts dedicados a implementar la anonimización de texto utilizando la biblioteca Presidio, a menudo en conjunto con modelos NER entrenados a medida y patrones Regex complementarios.
 
+## 📂 Estructura del Repositorio
+```text
 reconocimiento/
   0_dividir_db/
     output/                      # <- Subfolders created here (e.g., output_YYYY-MM-DD_HH-MM-SS) containing split .txt files, assignment_log.csv, verification_log.txt
@@ -35,6 +37,8 @@ reconocimiento/
     # Output files like reporte_anonimizacion.txt/html, presidio_annotations_output.json are saved directly in this folder.
     implementacion_presidio.ipynb # Implements anonymization using Presidio, combining custom NER model and Regex. Input CSV and model paths hardcoded.
   README.md                      # This documentation file (you are here).
+  ```
+
 
 ## Descripción General del Flujo de Trabajo
 
