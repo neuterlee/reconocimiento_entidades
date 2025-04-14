@@ -1,4 +1,4 @@
-# Proyecto Reconocimiento
+# Reconocimiento y anoninimización de entidades
 
 Este proyecto se centra en el Reconocimiento de Entidades Nombradas (NER, por sus siglas en inglés) y la anonimización de textos, diseñado principalmente para textos en español, particularmente descripciones relacionadas con desapariciones. Abarca una serie de scripts de Python, mayormente en formato Jupyter Notebook, que cubren la preparación de datos, procesamiento de anotaciones, entrenamiento de modelos NER usando spaCy, validación de modelos y técnicas de anonimización de texto aprovechando tanto modelos personalizados de spaCy como la biblioteca Presidio.
 
